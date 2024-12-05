@@ -2,7 +2,7 @@ package com.misael.curso.springboot.webapp.springboot_web.controllers;
 
 
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.misael.curso.springboot.webapp.springboot_web.models.User;
 import com.misael.curso.springboot.webapp.springboot_web.models.dto.UserDto;
 
-
+/*
+ Controlador con API REST
+ */
 
 @RestController
 @RequestMapping("/api")

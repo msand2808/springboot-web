@@ -11,6 +11,11 @@
     <ul>
         <li th:text="${user.name}"></li>
         <li th:text="${user.lastname}"></li>
+        <!--Comprobacion de email con th:if de thymeleaf-->
+        <!--if-->
+        <li th:if= "${user.email}" th:text="${user.email}"></li>
+        <!--else-->
+        <li th:if= "${user.email == null}" th:text="${'No tiene email'}"></li>
     </ul>
 
 </body>

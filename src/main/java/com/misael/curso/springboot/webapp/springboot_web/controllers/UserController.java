@@ -5,7 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.misael.curso.springboot.webapp.springboot_web.models.User;
-
+/*
+ Controlador de MVC con thymeleaf
+ */
 @Controller
 public class UserController {
 

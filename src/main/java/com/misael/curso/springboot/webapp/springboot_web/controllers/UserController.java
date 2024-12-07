@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.misael.curso.springboot.webapp.springboot_web.models.User;
 
@@ -30,15 +31,21 @@ public class UserController {
     @GetMapping("/list")
     public String list(ModelMap model)
     {
-        List<User> users = Arrays.asList(
+        model.addAttribute("title","Listado de Usuarios");
+        return "list";
+    }
+
+    /*
+     * El atributo 'users' ahora es global
+     */
+    @ModelAttribute("users")
+    public List<User> list()
+    {
+        return Arrays.asList(
             new User("David","Sandoval"), 
             new User("Maryori", "Salazar", "mayo@correo.com"), 
             new User("Mynor", "Gutierrez", "mynor@correo.com"),
             new User("Alejandro", "Salazar"));
-
-        model.addAttribute("users", users);
-        model.addAttribute("title","Listado de Usuarios");
-        return "list";
     }
 
 }

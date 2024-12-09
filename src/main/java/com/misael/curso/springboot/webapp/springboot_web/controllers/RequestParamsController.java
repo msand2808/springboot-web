@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.misael.curso.springboot.webapp.springboot_web.models.dto.ParamDto;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,6 +39,26 @@ public class RequestParamsController {
         paramDto.setCode(code);
 
         return paramDto;
+    }
+    /*
+     * Manejando parametros con httpServletRequest
+     */
+    @GetMapping("/request")
+    public ParamDto request(HttpServletRequest request) {
+        ParamDto params = new ParamDto();
+        //valor por defecto de code
+        Integer code = 0;
+
+        try {
+            code = Integer.parseInt(request.getParameter("code"));
+        } catch (Exception e) {
+            
+        }
+
+        params.setCode(code);
+        params.setMessage(request.getParameter("message"));
+
+        return params;
     }
     
     
